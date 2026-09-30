@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@variant light (&:where(.light, .light *));
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Syne', 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0A0A0A;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.light body {
+    background-color: #F8F9FA;
+    color: #0F172A;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #F1F3F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 4px;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5A1F;
+}
+
+/* Subtle glow effects */
+.orange-glow {
+  box-shadow: 0 0 60px -15px rgba(255, 90, 31, 0.35);
+}
+
+.orange-glow-sm {
+  box-shadow: 0 0 25px -5px rgba(255, 90, 31, 0.25);
+}
+
+.orange-border-glow:hover {
+  box-shadow: 0 0 35px -5px rgba(255, 90, 31, 0.22);
+}
+
+
